@@ -35,8 +35,8 @@ namespace CoffeeTip.UITests
 			app.DismissKeyboard();
 
 			app.Screenshot("Dismissed Keyboard");
-			var result = app.Query(x => x.Id("Tamered")).First();
-			Assert.IsFalse(result.Enabled, "Tampered is enabled, when it shouldn't be");
+			var result = app.Query(x => x.Id("Tamered")).Any();
+			Assert.IsFalse(result, "Tampered is enabled, when it shouldn't be");
 
 		}
 
